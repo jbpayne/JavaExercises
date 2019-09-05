@@ -3,7 +3,8 @@ package com.tts.state;
 public class Closed implements DoorState {
     private static Closed INSTANCE;
 
-    private Closed() {}
+    private Closed() {
+    }
 
     public static Closed getInstance() {
         if (INSTANCE == null) {
@@ -23,3 +24,4 @@ public class Closed implements DoorState {
         System.out.println("Already closed");
         return this;
     }
+}
