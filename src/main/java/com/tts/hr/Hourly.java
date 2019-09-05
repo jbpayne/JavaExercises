@@ -1,7 +1,6 @@
 package com.tts.hr;
 
 public class Hourly extends Employee {
-
     public static final double DEFAULT_HOURS = 80.0;
 
     private double rate;
@@ -44,6 +43,7 @@ public class Hourly extends Employee {
 
     @Override
     public String toString() {
-        return super.toString() + ", rate = " + rate + ", hours = " + hours;
+        return super.toString() + ", rate = " + rate +
+                ", hours = " + hours;
     }
 }

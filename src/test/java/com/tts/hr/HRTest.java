@@ -10,7 +10,7 @@ public class HRTest {
     public void payEverybody() {
         HR hr = new HR();
         hr.hire(new Salaried("Buffy"));
-        hr.hire(new Hourly(("Willow")));
+        hr.hire(new Hourly("Willow"));
 
         System.out.println(hr.payEverybody());
     }

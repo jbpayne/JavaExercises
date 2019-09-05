@@ -1,7 +1,6 @@
 package com.tts.hr;
 
 public abstract class Employee implements Payable {
-
     private String name;
 
     public Employee(String name) {
