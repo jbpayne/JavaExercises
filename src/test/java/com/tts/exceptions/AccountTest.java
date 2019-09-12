@@ -29,6 +29,7 @@ public class AccountTest {
         assertEquals(75.0, account.getBalance(), 0.01);
     }
 
+<<<<<<< HEAD
     @Test
     public void withdrawTooMuch() {
         account = new Account(100);
@@ -37,4 +38,11 @@ public class AccountTest {
         assertEquals(100.0, account.getBalance(), 0.01);
     }
 
+=======
+    @Test(expected = InsufficientFundsException.class)
+    public void overdrawnAccount() {
+        account = new Account(100);
+        double newBalance = account.withdraw(101);
+    }
+>>>>>>> 2d1802956cb419605087ffdcfa000bce3762cd3f
 }

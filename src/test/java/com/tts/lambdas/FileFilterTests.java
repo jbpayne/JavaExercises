@@ -5,24 +5,24 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileFilter;
 
-import static org.junit.Assert.*;
-
+@SuppressWarnings("ConstantConditions")
 public class FileFilterTests {
     private String dir = "src/test/java/com/tts";
 
     @Test
     public void listAllFiles() {
         File root = new File(dir);
-        for (File f : root.listFiles())
+        for (File f : root.listFiles()) {
             System.out.println(f);
+        }
     }
 
     @Test
-    public void listOnlyJavaFiles() {
+    public void listOnlyJavaFilesUsingAnonInnerClass() {
         File root = new File(dir);
         for (File f : root.listFiles(new FileFilter() {
             @Override
-            public boolean accept (File pathname){
+            public boolean accept(File pathname) {
                 return pathname.getName().endsWith(".java");
             }
         })) {
@@ -31,23 +31,7 @@ public class FileFilterTests {
     }
 
     @Test
-    public void listOnlyJavaFilesUsingLambda() {
-        File root = new File(dir);
-        for (File f : root.listFiles(pathname -> pathname.getName().endsWith(".java"))) {
-            System.out.println(f);
-        }
-    }
-
-    @Test
-    public void listAllFilesUsingLambda() {
-        File root = new File(dir);
-        for (File f : root.listFiles(pathname -> true)) {
-            System.out.println(f);
-        }
-    }
-
-    @Test
-    public void listDirectoriesUsingLambda() {
+    public void listDirectoriesUsingLamda() {
         File root = new File(dir);
         for (File f : root.listFiles(pathname -> pathname.isDirectory())) {
             System.out.println(f);
@@ -55,7 +39,7 @@ public class FileFilterTests {
     }
 
     @Test
-    public void listDirectoriesUsingMethodReference() {
+    public void listDirectoriesUsingMethodRef() {
         File root = new File(dir);
         for (File f : root.listFiles(File::isDirectory)) {
             System.out.println(f);

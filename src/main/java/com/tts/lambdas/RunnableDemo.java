@@ -16,6 +16,9 @@ public class RunnableDemo {
 
         Runnable lambda = () -> System.out.println("Assigned to local variable");
         new Thread(lambda).start();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2d1802956cb419605087ffdcfa000bce3762cd3f
     }
 }
